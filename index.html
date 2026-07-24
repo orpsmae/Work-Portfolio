@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Work & Projects</title>
+  <style>
+    /* Base Styles */
+    :root {
+      --bg-color: #f8f9fa;
+      --card-bg: #ffffff;
+      --text-color: #212529;
+      --accent-color: #2563eb;
+      --border-color: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+    }
+
+    /* Header & Profile Section */
+    header {
+      text-align: center;
+      padding: 2.5rem 1.5rem 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .profile-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid var(--accent-color);
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.25rem;
+    }
+
+    header p {
+      color: #6b7280;
+      font-size: 1rem;
+    }
+
+    /* Tab Navigation */
+    .nav-tabs {
+      display: flex;
+      justify-content: center;
+      background-color: #f1f5f9;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .tab-btn {
+      padding: 1rem 1.5rem;
+      background: none;
+      border: none;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #64748b;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-bottom: 3px solid transparent;
+    }
+
+    .tab-btn:hover {
+      color: var(--accent-color);
+    }
+
+    .tab-btn.active {
+      color: var(--accent-color);
+      border-bottom-color: var(--accent-color);
+      background-color: var(--card-bg);
+    }
+
+    /* Tab Content - Hides inactive sections */
+    .tab-content {
+      display: none;
+      padding: 2.5rem;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Cards & Grids */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.25rem;
+      background: #fafafa;
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+      color: var(--accent-color);
+    }
+
+    ul {
+      list-style-position: inside;
+      margin-top: 0.5rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .nav-tabs {
+        flex-direction: column;
+      }
+      .tab-btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header with Profile Info -->
+    <header>
+      <!-- REPLACE "IMG_8227.jpeg" WITH YOUR ACTUAL IMAGE PATH OR URL -->
+      <img src="IMG_8228.jpeg" alt="IMG_8229.jpeg" class="profile-photo">
+      <h1>[ORPHA MAE E. JIMENEZ]</h1>
+      <p>[WEB STACK DEVELOPER]</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="nav-tabs">
+      <button class="tab-btn active" onclick="openTab(event, 'about')">About</button>
+      <button class="tab-btn" onclick="openTab(event, 'projects')">Projects</button>
+      <button class="tab-btn" onclick="openTab(event, 'experience')">Experience</button>
+      <button class="tab-btn" onclick="openTab(event, 'contact')">Contact</button>
+    </nav>
+
+    <!-- SECTION 1: ABOUT -->
+    <section id="about" class="tab-content active">
+      <h2>About Me</h2>
+      <p style="margin-top: 1rem;">
+       I am a passionate web developer and creator dedicated to building clean, functional, and visually engaging digital experiences. With a strong foundation in modern web design, front-end development, and user-focused layouts, I enjoy transforming ideas into responsive, easy-to-navigate websites.
+      </p>
+      
+      <h3 style="margin-top: 1.5rem;">Core Skills</h3>
+      <div class="grid">
+        <div class="card">
+          <h3>Skill Set 1</h3>
+          <p>HTML, CSS, JavaScript, Web Design</p>
+        </div>
+        <div class="card">
+          <h3>Skill Set 2</h3>
+          <p>Project Management, Communication, Problem Solving</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: PROJECTS -->
+    <section id="projects" class="tab-content">
+      <h2>Featured Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Explanation 1</h3>
+          <p>Project Overview: Engineered a high-performance, single-page application (SPA) designed to showcase technical capabilities and professional deliverables. Built with dynamic DOM manipulation and modular section rendering to isolate content views, eliminate layout shift, and optimize user experience (UX) for fast, distraction-free evaluation.</p>
+        </div>
+        <div class="card">
+          <h3>Explanation 2</h3>
+          <p>Engineered an interactive, responsive web application designed for high-resolution visual presentation and dynamic content delivery. Implemented an asynchronous media display system with CSS Grid and flex layouts, optimizing asset rendering and maintaining structural responsiveness across diverse device viewports.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: EXPERIENCE -->
+    <section id="experience" class="tab-content">
+      <h2>Work Experience</h2>
+      <div class="card" style="margin-top: 1rem;">
+        <h3>[WEB STACK DEVELOPER] — [MAE'MAE'S PORTFOLIO]</h3>
+        <p><em>[July 12, 2026] – [July 25, 2026]</em></p>
+        <ul>
+          <li>I am a Web Developer focused on crafting clean, user-centric digital experiences with modern web standards. I build responsive, structured web applications that prioritize visual clarity, smooth interactive navigation, and fast load performance across all screen sizes.</li>
+          <li>Results-driven Web Developer specializing in building fast, scalable, and responsive web applications. Demonstrated track record of optimizing client-side performance, reducing asset overhead, and architecting clean, maintainable code structures using modern HTML5, CSS layout architecture, and vanilla JavaScript.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION 4: CONTACT -->
+    <section id="contact" class="tab-content">
+      <h2>Contact Info</h2>
+      <p style="margin-top: 1rem;">Feel free to reach out to discuss potential opportunities or collaborations!</p>
+      <ul style="margin-top: 1rem; list-style: none;">
+        <li><strong>Email:</strong> orphamae@08gmail.com</li>
+        <li><strong>LinkedIn:</strong> linkedin.com/in/JimenezMaez</li>
+        <li><strong>GitHub:</strong> github.com/orpsmae</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- JavaScript to Handle Tab Switching -->
+  <script>
+    function openTab(evt, tabName) {
+      // Hide all tab contents
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(content => content.classList.remove('active'));
+
+      // Remove active class from all buttons
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(button => button.classList.remove('active'));
+
+      // Show current tab and set button as active
+      document.getElementById(tabName).classList.add('active');
+      evt.currentTarget.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
